@@ -972,7 +972,8 @@ body::before {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: var(--color-primary);
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
   margin-bottom: 30px;
   max-width: 1200px;
 }
@@ -980,6 +981,8 @@ body::before {
 .hero-title .line-break, .hero-headline .line-break {
   display: block;
   white-space: nowrap;
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
 }
 
 .text-gradient {
