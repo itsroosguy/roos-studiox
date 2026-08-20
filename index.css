@@ -817,39 +817,179 @@ body::before {
   width: 100%;
 }
 
-/* ROOS KANGAROO ANIMATED NEURAL NETWORK CANVAS STAGE */
-.neural-network-stage {
+/* 3-STAGE ENTERPRISE TRANSFORMATION CASE-STUDY ENGINE */
+.transformation-case-study-stage {
   position: relative;
   width: 100%;
-  max-width: 580px;
-  height: 580px;
+  max-width: 600px;
+  min-height: 520px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-@media (max-width: 992px) {
-  .neural-network-stage {
-    max-width: 440px;
-    height: 440px;
-  }
-}
-
-@media (max-width: 600px) {
-  .neural-network-stage {
-    max-width: 320px;
-    height: 320px;
-  }
-}
-
-.roos-neural-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  gap: 20px;
+  perspective: 1200px;
   z-index: 5;
-  cursor: crosshair;
+}
+
+/* STAGE 01: BEFORE (Fragmented & Outdated) */
+.tf-card.tf-stage-before {
+  position: relative;
+  z-index: 5;
+  width: 84%;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px 24px;
+  opacity: 0.75;
+  transform: rotateX(8deg) scale(0.94);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tf-badge-gray {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.tf-status-dim {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+/* STAGE 02: TRANSFORMATION ENGINE BEAM */
+.tf-transformation-beam {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beam-core-glow {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, #3B82F6 50%, #22D98A 100%);
+  box-shadow: 0 0 20px #3B82F6, 0 0 40px #22D98A;
+}
+
+.beam-tag {
+  position: relative;
+  z-index: 5;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+/* STAGE 03: AFTER (EVOLVED ENTERPRISE ECOSYSTEM) */
+.tf-card.tf-stage-after {
+  position: relative;
+  z-index: 5;
+  width: 98%;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(59, 130, 246, 0.35);
+  transform: rotateX(4deg) scale(1.02);
+  transition: all 0.4s ease;
+}
+
+.tf-card.tf-stage-after:hover {
+  transform: rotateX(0deg) scale(1.04);
+  border-color: #22D98A;
+  box-shadow: 0 30px 70px rgba(34, 217, 138, 0.35);
+}
+
+.tf-badge-blue {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #3B82F6;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.tf-status-live {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: #22D98A;
+}
+
+.tf-hero-title-preview {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.tf-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.tf-metric-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.tf-metric-item strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #22D98A;
+}
+
+.tf-metric-item span {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+.tf-cta-preview {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
 }
 
 .hero-aura-glow {
