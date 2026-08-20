@@ -982,7 +982,7 @@ body::before {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #F5F6FA 20%, #986CFF 60%, #22D98A 100%);
+  background: linear-gradient(135deg, #E0E7FF 0%, #A855F7 50%, #818CF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
