@@ -812,21 +812,20 @@ body::before {
 .hero-visual-col {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   width: 100%;
+  margin-top: -20px;
 }
 
 /* 3-SECOND INTERACTIVE AUTO-SWAPPING SERVICE CARD SHOWCASE */
 .hero-card-swap-stage {
   position: relative;
   width: 100%;
-  max-width: 580px;
-  min-height: 500px;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 16px;
   z-index: 5;
   perspective: 1200px;
@@ -834,8 +833,8 @@ body::before {
 
 /* 3-SECOND PROGRESS FILL BAR */
 .card-swap-progress-bar {
-  width: 92%;
-  height: 3px;
+  width: 100%;
+  height: 4px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   overflow: hidden;
@@ -851,45 +850,96 @@ body::before {
   transition: width 0.05s linear;
 }
 
-/* 3D STACKED SERVICE CARDS WRAPPER */
+/* 3D STACKED SQUARE SERVICE CARDS WRAPPER (420px X 420px SQUARE) */
 .hero-cards-stack-wrapper {
   position: relative;
-  width: 98%;
-  height: 280px;
+  width: 100%;
+  max-width: 420px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
 }
 
-/* SWAP CARD ITEM */
+/* SQUARE SWAP CARD ITEM */
 .swap-card {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.94) 0%, rgba(15, 23, 42, 0.98) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  border-radius: 22px;
-  padding: 28px 32px;
+  border-radius: 28px;
+  padding: 36px 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(59, 130, 246, 0.25);
   opacity: 0;
-  transform: translateY(30px) scale(0.92) rotateX(-10deg);
+  transform: translateY(35px) scale(0.9) rotateX(-12deg);
   pointer-events: none;
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .swap-card.active {
   opacity: 1;
   transform: translateY(0) scale(1) rotateX(0deg);
   pointer-events: auto;
-  border-color: #3B82F6;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(59, 130, 246, 0.4);
 }
+
+/* 7 DISTINCT LUXURY COLOR THEMES FOR EACH CARD */
+.swap-card[data-index="0"] {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(59, 130, 246, 0.35);
+}
+
+.swap-card[data-index="1"] {
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(139, 92, 246, 0.35);
+}
+.swap-card[data-index="1"] .swap-card-num { color: #A78BFA; }
+.swap-card[data-index="1"] .swap-card-badge { color: #C084FC; background: rgba(192, 132, 252, 0.15); border-color: rgba(192, 132, 252, 0.3); }
+
+.swap-card[data-index="2"] {
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(34, 211, 238, 0.35);
+}
+.swap-card[data-index="2"] .swap-card-num { color: #22D3EE; }
+.swap-card[data-index="2"] .swap-card-badge { color: #38BDF8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.3); }
+
+.swap-card[data-index="3"] {
+  background: linear-gradient(135deg, rgba(6, 95, 70, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(34, 217, 138, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(34, 217, 138, 0.35);
+}
+.swap-card[data-index="3"] .swap-card-num { color: #22D98A; }
+.swap-card[data-index="3"] .swap-card-badge { color: #34D399; background: rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.3); }
+
+.swap-card[data-index="4"] {
+  background: linear-gradient(135deg, rgba(112, 26, 117, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(232, 121, 249, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(232, 121, 249, 0.35);
+}
+.swap-card[data-index="4"] .swap-card-num { color: #F0ABFC; }
+.swap-card[data-index="4"] .swap-card-badge { color: #E879F9; background: rgba(232, 121, 249, 0.15); border-color: rgba(232, 121, 249, 0.3); }
+
+.swap-card[data-index="5"] {
+  background: linear-gradient(135deg, rgba(146, 64, 14, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(251, 191, 36, 0.35);
+}
+.swap-card[data-index="5"] .swap-card-num { color: #FBBF24; }
+.swap-card[data-index="5"] .swap-card-badge { color: #F59E0B; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); }
+
+.swap-card[data-index="6"] {
+  background: linear-gradient(135deg, rgba(49, 46, 129, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(99, 102, 241, 0.35);
+}
+.swap-card[data-index="6"] .swap-card-num { color: #818CF8; }
+.swap-card[data-index="6"] .swap-card-badge { color: #6366F1; background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3); }
 
 .swap-card-top {
   display: flex;
@@ -919,12 +969,12 @@ body::before {
 
 .swap-card-title {
   font-family: var(--font-heading);
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(22px, 2.2vw, 28px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: #FFFFFF;
-  margin: 12px 0;
+  margin: 16px 0;
 }
 
 .swap-card-tags {
