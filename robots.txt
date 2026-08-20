@@ -1,0 +1,11 @@
+# ==========================================================================
+# ROOS STUDIOX — ROBOTS.TXT
+# ==========================================================================
+
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /.system_generated/
+
+# Sitemap Location
+Sitemap: https://roosstudiox.com/sitemap.xml

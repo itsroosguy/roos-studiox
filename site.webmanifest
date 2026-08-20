@@ -1,0 +1,22 @@
+{
+  "name": "Roos StudioX — Creative Intelligence Studio",
+  "short_name": "Roos StudioX",
+  "description": "Creative thinking. Strategic execution. Building brands, products, and experiences that create momentum.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F16",
+  "theme_color": "#0F172A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
