@@ -806,7 +806,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 680px;
+  max-width: 880px;
 }
 
 .hero-visual-col {
@@ -999,7 +999,7 @@ body::before {
   line-height: 1.6;
   letter-spacing: -0.01em;
   color: var(--color-light-gray);
-  max-width: 760px;
+  max-width: 880px;
   margin-bottom: 36px;
 }
 
