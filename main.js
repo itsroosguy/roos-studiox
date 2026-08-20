@@ -1205,15 +1205,14 @@ function switchFooterDiscipline(discId, btnElement) {
 }
 
 // ==========================================================================
-// 3-SECOND AUTO-SWAPPING HERO SERVICE CARD CAROUSEL CONTROLLER
+// 3-SECOND AUTO-SWAPPING STACKED HERO SERVICE CAROUSEL CONTROLLER
 // ==========================================================================
 function initHeroCardSwapper() {
   const cards = document.querySelectorAll('.swap-card');
   const dots = document.querySelectorAll('.swap-dot');
   const briefText = document.getElementById('briefText');
-  const progressFill = document.getElementById('cardSwapProgress');
 
-  if (!cards.length || !briefText || !progressFill) return;
+  if (!cards.length || !briefText) return;
 
   const briefs = [
     "Define your market advantage before you build. Transform ambitious ideas into clear category leadership.",
@@ -1227,14 +1226,21 @@ function initHeroCardSwapper() {
 
   let currentIndex = 0;
   const intervalTime = 3000; // 3 Seconds exact cycle
-  let startTime = performance.now();
+  let timerId = null;
 
   function showCard(index) {
+    const total = cards.length;
+    const nextIndex = (index + 1) % total;
+    const next2Index = (index + 2) % total;
+
     cards.forEach((card, i) => {
+      card.classList.remove('active', 'next', 'next-2');
       if (i === index) {
         card.classList.add('active');
-      } else {
-        card.classList.remove('active');
+      } else if (i === nextIndex) {
+        card.classList.add('next');
+      } else if (i === next2Index) {
+        card.classList.add('next-2');
       }
     });
 
@@ -1256,18 +1262,12 @@ function initHeroCardSwapper() {
     }, 180);
   }
 
-  function tick(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(100, (elapsed / intervalTime) * 100);
-    progressFill.style.width = `${progress}%`;
-
-    if (elapsed >= intervalTime) {
+  function startCycle() {
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(() => {
       currentIndex = (currentIndex + 1) % cards.length;
       showCard(currentIndex);
-      startTime = performance.now();
-    }
-
-    requestAnimationFrame(tick);
+    }, intervalTime);
   }
 
   // Click Dot selection
@@ -1275,11 +1275,10 @@ function initHeroCardSwapper() {
     dot.addEventListener('click', () => {
       currentIndex = idx;
       showCard(currentIndex);
-      startTime = performance.now();
+      startCycle();
     });
   });
 
-  startTime = performance.now();
   showCard(0);
-  requestAnimationFrame(tick);
+  startCycle();
 }
