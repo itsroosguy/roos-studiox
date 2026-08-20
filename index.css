@@ -794,35 +794,42 @@ body::before {
 
 .hero-content-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
   align-items: center;
   width: 100%;
   position: relative;
   z-index: 5;
 }
 
+@media (max-width: 992px) {
+  .hero-content-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
 .hero-text-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 880px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-visual-col {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
   width: 100%;
-  margin-top: -20px;
 }
 
 /* 3-SECOND INTERACTIVE AUTO-SWAPPING SERVICE CARD SHOWCASE */
 .hero-card-swap-stage {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -834,40 +841,38 @@ body::before {
 /* SQUARE SWAP CARD STACKING SYSTEM */
 .swap-card {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-radius: 28px;
-  padding: 36px 36px;
+  border-radius: 24px;
+  padding: 30px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   opacity: 0;
-  transform: translateY(-40px) scale(1.05) rotateX(10deg);
+  visibility: hidden;
+  transform: translateY(-30px) scale(1.04);
   pointer-events: none;
   z-index: 1;
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.65s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease, z-index 0.5s ease;
 }
 
 .swap-card.active {
   opacity: 1;
-  transform: translateY(0) scale(1) rotateX(0deg);
+  visibility: visible;
+  transform: translateY(0) scale(1);
   z-index: 10;
   pointer-events: auto;
 }
 
 .swap-card.next {
-  opacity: 0.72;
-  transform: translateY(22px) scale(0.92) rotateX(-5deg);
+  opacity: 0.55;
+  visibility: visible;
+  transform: translateY(16px) scale(0.93);
   z-index: 5;
-  pointer-events: none;
-}
-
-.swap-card.next-2 {
-  opacity: 0.38;
-  transform: translateY(40px) scale(0.85) rotateX(-9deg);
-  z-index: 2;
   pointer-events: none;
 }
 
@@ -979,20 +984,34 @@ body::before {
   border-radius: 999px;
 }
 
+/* 3D STACKED SQUARE SERVICE CARDS WRAPPER (380px X 360px) */
+.hero-cards-stack-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
 /* OUTSIDE SMALL BRIEF */
 .swap-outside-brief {
   position: relative;
   z-index: 5;
-  width: 98%;
-  background: rgba(15, 23, 42, 0.75);
+  width: 100%;
+  max-width: 380px;
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 14px 20px;
+  padding: 14px 18px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .brief-label {
