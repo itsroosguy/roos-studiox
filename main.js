@@ -135,6 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // Initialize 3-Second Auto-Swapping Hero Service Card Showcase
+  initHeroCardSwapper();
+
   // ==========================================================================
   // OFFICIAL ROOS STUDIOX BRAND SYSTEM: ELECTRIC PURPLE & NEON GREEN PALETTES
   // ==========================================================================
@@ -1199,4 +1202,84 @@ function switchFooterDiscipline(discId, btnElement) {
       card.style.transform = 'translateY(0)';
     }, 150);
   }
+}
+
+// ==========================================================================
+// 3-SECOND AUTO-SWAPPING HERO SERVICE CARD CAROUSEL CONTROLLER
+// ==========================================================================
+function initHeroCardSwapper() {
+  const cards = document.querySelectorAll('.swap-card');
+  const dots = document.querySelectorAll('.swap-dot');
+  const briefText = document.getElementById('briefText');
+  const progressFill = document.getElementById('cardSwapProgress');
+
+  if (!cards.length || !briefText || !progressFill) return;
+
+  const briefs = [
+    "Define your market advantage before you build. Transform ambitious ideas into clear category leadership.",
+    "Create iconic brands people remember. Build distinctive visual systems that command trust and premium pricing power.",
+    "Craft intuitive digital journeys connecting brands with customers through award-winning design craft.",
+    "Build fast, scalable web platforms engineered with enterprise code and sub-85ms hydration speeds.",
+    "Work smarter and scale faster. Unlock 24/7 efficiency through custom AI agents and autonomous workflows.",
+    "Turn market attention into enterprise revenue through data-driven acquisition and conversion engines.",
+    "Reimagine how your business operates. Connect strategy, design, code, and AI into one scalable growth ecosystem."
+  ];
+
+  let currentIndex = 0;
+  const intervalTime = 3000; // 3 Seconds exact cycle
+  let startTime = performance.now();
+
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      if (i === index) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Update Outside Brief with smooth cross-fade
+    briefText.style.opacity = '0';
+    briefText.style.transform = 'translateY(4px)';
+    setTimeout(() => {
+      briefText.textContent = briefs[index];
+      briefText.style.opacity = '1';
+      briefText.style.transform = 'translateY(0)';
+    }, 180);
+  }
+
+  function tick(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(100, (elapsed / intervalTime) * 100);
+    progressFill.style.width = `${progress}%`;
+
+    if (elapsed >= intervalTime) {
+      currentIndex = (currentIndex + 1) % cards.length;
+      showCard(currentIndex);
+      startTime = performance.now();
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  // Click Dot selection
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      currentIndex = idx;
+      showCard(currentIndex);
+      startTime = performance.now();
+    });
+  });
+
+  startTime = performance.now();
+  showCard(0);
+  requestAnimationFrame(tick);
 }

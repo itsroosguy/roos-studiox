@@ -178,55 +178,138 @@
             </div>
           </div>
 
-          <!-- RIGHT COLUMN: 3-STAGE VISUAL TRANSFORMATION CASE-STUDY ENGINE -->
+          <!-- RIGHT COLUMN: 3-SECOND INTERACTIVE AUTO-SWAPPING SERVICE CARD SHOWCASE -->
           <div class="hero-visual-col" id="heroVisualCol">
-            <div class="transformation-case-study-stage">
+            <div class="hero-card-swap-stage">
 
               <!-- BACKGROUND AMBIENT REFRACTION CANVAS -->
               <canvas id="heroNeuralCanvas" class="roos-neural-canvas"></canvas>
 
-              <!-- STAGE 01: BEFORE (Fragmented & Outdated Business) -->
-              <div class="tf-card tf-stage-before">
-                <div class="tf-card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                  <span class="tf-badge-gray">STAGE 01 &bull; FRAGMENTED ORIGIN</span>
-                  <span class="tf-status-dim">DISCONNECTED</span>
-                </div>
-                <div class="tf-card-body" style="margin-top: 12px;">
-                  <div style="font-size: 14px; font-weight: 500; color: #94A3B8;">Ordinary Web &amp; Scattered Touchpoints</div>
-                  <div style="font-size: 12px; color: #64748B; margin-top: 4px;">Low Conversion &bull; Unstructured Data &bull; Manual Ops</div>
-                </div>
+              <!-- 3-SECOND AUTO-PROGRESS INDICATOR BAR -->
+              <div class="card-swap-progress-bar">
+                <div class="card-swap-progress-fill" id="cardSwapProgress"></div>
               </div>
 
-              <!-- STAGE 02: TRANSFORMATION ENGINE (Roos StudioX Active Craft) -->
-              <div class="tf-transformation-beam">
-                <div class="beam-core-glow"></div>
-                <span class="beam-tag">ROOS STUDIOX ENGINE &bull; STRATEGY &bull; CODE &bull; AI</span>
-              </div>
+              <!-- 3D STACKED SERVICE CARDS CONTAINER (SWAPS EVERY 3 SECONDS) -->
+              <div class="hero-cards-stack-wrapper" id="heroCardsStack">
 
-              <!-- STAGE 03: AFTER (EVOLVED HIGH-GROWTH ECOSYSTEM) -->
-              <div class="tf-card tf-stage-after">
-                <div class="tf-card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                  <span class="tf-badge-blue">STAGE 02 &bull; EVOLVED ECOSYSTEM</span>
-                  <span class="tf-status-live">&bull; 99.4% PERFORMANCE</span>
-                </div>
-                <div class="tf-card-body">
-                  <div class="tf-hero-title-preview">Unified Digital Growth Engine</div>
-                  <div class="tf-metrics-row">
-                    <div class="tf-metric-item">
-                      <strong>+320%</strong>
-                      <span>Valuation Lift</span>
-                    </div>
-                    <div class="tf-metric-item">
-                      <strong>&lt;85ms</strong>
-                      <span>Hydration</span>
-                    </div>
-                    <div class="tf-metric-item">
-                      <strong>24/7</strong>
-                      <span>AI Automation</span>
-                    </div>
+                <!-- CARD 01: STRATEGY -->
+                <div class="swap-card active" data-index="0">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">01 // STRATEGY</span>
+                    <span class="swap-card-badge">POSITIONING MATRIX</span>
                   </div>
-                  <div class="tf-cta-preview">Connected Enterprise Ecosystem &nearr;</div>
+                  <h3 class="swap-card-title">Brand Strategy &amp; Market Positioning</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">Market Research</span>
+                    <span class="swap-tag">Category Architecture</span>
+                    <span class="swap-tag">Naming Systems</span>
+                  </div>
                 </div>
+
+                <!-- CARD 02: BRAND SYSTEMS -->
+                <div class="swap-card" data-index="1">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">02 // BRAND SYSTEMS</span>
+                    <span class="swap-card-badge">VISUAL IDENTITY</span>
+                  </div>
+                  <h3 class="swap-card-title">Brand Systems &amp; Visual Identity</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">Design Systems</span>
+                    <span class="swap-tag">Design Tokens</span>
+                    <span class="swap-tag">Brand Guidelines</span>
+                  </div>
+                </div>
+
+                <!-- CARD 03: DIGITAL EXPERIENCES -->
+                <div class="swap-card" data-index="2">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">03 // EXPERIENCES</span>
+                    <span class="swap-card-badge">UI/UX CRAFT</span>
+                  </div>
+                  <h3 class="swap-card-title">UI/UX &amp; High-Converting Interfaces</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">User Journeys</span>
+                    <span class="swap-tag">Interface Design</span>
+                    <span class="swap-tag">Spatial Craft</span>
+                  </div>
+                </div>
+
+                <!-- CARD 04: DIGITAL ENGINEERING -->
+                <div class="swap-card" data-index="3">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">04 // ENGINEERING</span>
+                    <span class="swap-card-badge">&lt;85ms LATENCY</span>
+                  </div>
+                  <h3 class="swap-card-title">Web Platforms &amp; Enterprise Code</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">Next.js Code</span>
+                    <span class="swap-tag">Custom Software</span>
+                    <span class="swap-tag">Sub-85ms Speed</span>
+                  </div>
+                </div>
+
+                <!-- CARD 05: AI AUTOMATION -->
+                <div class="swap-card" data-index="4">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">05 // AI AUTOMATION</span>
+                    <span class="swap-card-badge">24/7 PIPELINES</span>
+                  </div>
+                  <h3 class="swap-card-title">Autonomous AI Systems &amp; Workflows</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">AI Agents</span>
+                    <span class="swap-tag">Custom Workflows</span>
+                    <span class="swap-tag">Automated Ops</span>
+                  </div>
+                </div>
+
+                <!-- CARD 06: GROWTH SYSTEMS -->
+                <div class="swap-card" data-index="5">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">06 // GROWTH ENGINES</span>
+                    <span class="swap-card-badge">+320% LIFT</span>
+                  </div>
+                  <h3 class="swap-card-title">Growth Engines &amp; Conversion Lift</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">Conversion Funnels</span>
+                    <span class="swap-tag">Acquisition</span>
+                    <span class="swap-tag">Telemetry</span>
+                  </div>
+                </div>
+
+                <!-- CARD 07: TRANSFORMATION ENGINE -->
+                <div class="swap-card" data-index="6">
+                  <div class="swap-card-top">
+                    <span class="swap-card-num">07 // TRANSFORMATION</span>
+                    <span class="swap-card-badge">ENTERPRISE SCALE</span>
+                  </div>
+                  <h3 class="swap-card-title">Full Digital Transformation Ecosystem</h3>
+                  <div class="swap-card-tags">
+                    <span class="swap-tag">Integrated Engine</span>
+                    <span class="swap-tag">Category Leadership</span>
+                    <span class="swap-tag">Growth</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- OUTSIDE SMALL BRIEF (DYNAMICALLY UPDATED EVERY 3 SECONDS) -->
+              <div class="swap-outside-brief" id="swapOutsideBrief">
+                <span class="brief-label">OUTCOME &bull;</span>
+                <p class="brief-text" id="briefText">
+                  Define your market advantage before you build. Transform ambitious ideas into clear category leadership.
+                </p>
+              </div>
+
+              <!-- CAROUSEL DOT INDICATORS -->
+              <div class="swap-dot-indicators" id="swapDots">
+                <span class="swap-dot active" data-index="0"></span>
+                <span class="swap-dot" data-index="1"></span>
+                <span class="swap-dot" data-index="2"></span>
+                <span class="swap-dot" data-index="3"></span>
+                <span class="swap-dot" data-index="4"></span>
+                <span class="swap-dot" data-index="5"></span>
+                <span class="swap-dot" data-index="6"></span>
               </div>
 
             </div>
