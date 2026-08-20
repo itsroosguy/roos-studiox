@@ -968,17 +968,18 @@ body::before {
 /* Hero Title */
 .hero-title, .hero-headline {
   font-family: var(--font-heading);
-  font-size: clamp(64px, 7.5vw, 104px);
+  font-size: clamp(48px, 6vw, 92px);
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.04em;
   color: var(--color-primary);
   margin-bottom: 30px;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 .hero-title .line-break, .hero-headline .line-break {
   display: block;
+  white-space: nowrap;
 }
 
 .text-gradient {
